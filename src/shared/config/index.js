@@ -1,21 +1,22 @@
-// global level config 
+// yaha pr basically ham global level ka config likhege!!
 
 import dotenv from "dotenv"
 
-dotenv.config();
+dotenv.config()
+
 
 const config = {
-    //server
+    // Server
     node_env: process.env.NODE_ENV || 'development',
-    port: parseInt(process.env.PORT || "5000" , 10), //10 isliye paas kra taaki ye decimal number return kre 
+    port: parseInt(process.env.PORT || "5000", 10),
 
-    // mongo db
+    // MOngodb
     mongo: {
         uri: process.env.MONGO_URI || 'mongodb://localhost:27017/api_monitoring',
         dbName: process.env.MONGO_DB_NAME || 'api_monitoring',
-
     },
 
+    // postgreSQL
     postgres: {
         host: process.env.PG_HOST || 'localhost',
         port: parseInt(process.env.PG_PORT || '5432', 10),
@@ -51,5 +52,4 @@ const config = {
     }
 }
 
-
-export default config; 
+export default config;

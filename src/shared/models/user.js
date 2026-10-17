@@ -62,7 +62,7 @@ const userSchema = new mongoose.Schema({
         enum: ['super_admin', 'client_admin', 'client_viewer'],
         default: 'client_viewer'
     },
-    clientId: {                                            // foreign key bnare 
+    clientId: {
         type: mongoose.Schema.Types.ObjectId, // 123
         ref: "Client",
         required: function () {
@@ -106,7 +106,7 @@ userSchema.pre('save', async function (next) {
         const salt = await bcrypt.genSalt(10);
         this.password = await bcrypt.hash(this.password, salt);
         next();
-    } catch (error) {           
+    } catch (error) {
         next(error);
     }
 });
