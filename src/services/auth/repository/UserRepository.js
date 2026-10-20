@@ -1,5 +1,6 @@
-import BaseRepository from "./BaseRepository";
+import BaseRepository from "./BaseRepository.js";
 import user from "../../../shared/models/User.js"
+
 
 class MongoUserRepository extends BaseRepository {
     constructor() {

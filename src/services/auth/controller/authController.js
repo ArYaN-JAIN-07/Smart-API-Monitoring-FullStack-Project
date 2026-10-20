@@ -1,3 +1,7 @@
+import {APPLICATION_ROLES} from "../../../shared/constants/roles.js"
+import config from "../../../shared/config/index.js";
+
+
 export class AuthController {
     constructor(authService) {
         if(!authService) {
@@ -14,7 +18,7 @@ export class AuthController {
             const { username, email, password } = req.body;
 
             const superAdminData = {
-                username, email, password, role: APPLICATION_ROLES.SUPER_ADMIN
+                username, email, password, role: APPLICATION_ROLES.SUPER_ADMIN  
             };
 
             const { token, user } = await this.authService.onboardSuperAdmin(superAdminData);
@@ -28,6 +32,8 @@ export class AuthController {
             res.status(201).json(ResponseFormatter.success(user, "Super admin created successfully", 201))
             
         } catch (error) {
+
+            next(error)
             
         }
     }
