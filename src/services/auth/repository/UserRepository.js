@@ -26,8 +26,9 @@ class MongoUserRepository extends BaseRepository {
             logger.info("User created", { username: user.username });
             return user
         } catch (error) {
-            logger.error("Error creating user", error)
+            logger.error("Error creating user", error);
             throw error;
         }
+        
     }
 }
