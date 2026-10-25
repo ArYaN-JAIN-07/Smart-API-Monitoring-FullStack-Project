@@ -29,6 +29,8 @@ class MongoUserRepository extends BaseRepository {
             logger.error("Error creating user", error);
             throw error;
         }
+
+        
         
     }
 }
