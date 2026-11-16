@@ -33,4 +33,4 @@ class MongoUserRepository extends BaseRepository {
         
         
     };
-}
+};
